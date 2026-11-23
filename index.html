@@ -22,15 +22,62 @@ table{font-size:12px;border-collapse:collapse;width:100%;font-family:var(--albed
 @media(max-width:760px){main{grid-template-columns:1fr;grid-template-rows:55vh auto}aside{border-left:0;border-top:1px solid var(--border)}}
 </style>
 <script type="importmap">{"imports":{"three":"https://esm.sh/three@0.160.0","three/addons/":"https://esm.sh/three@0.160.0/examples/jsm/"}}</script>
+
+<style>
+#mudou{font-size:13px;line-height:1.45;border:1px solid var(--border);border-radius:8px;padding:10px 12px;background:var(--bg)}
+#mudou summary{font-weight:600;font-size:14px;cursor:pointer}
+#mudou h3{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:14px 0 4px}
+#mudou ol,#mudou ul{margin:6px 0;padding-left:18px}#mudou li{margin:4px 0}
+#mudou a{color:var(--accent)}
+.facas{display:grid;gap:10px}.facas figure{margin:0}.facas img{width:100%;border:1px solid var(--border);display:block;background:#fff}
+.facas figcaption{font-size:12px;color:var(--muted);margin-top:3px}
+.oquemudou{font-size:13px;color:var(--accent)}
+@media(max-width:760px){header{gap:8px 12px}}
+</style>
 </head><body>
 <header><h1>Cartão pop-up de natal · Foról</h1><span class="muted" id="dims"></span>
 <label style="min-width:260px">abertura <input id="ang" type="range" min="4" max="180" value="120"><span id="angv" style="width:34px">120°</span></label>
+<a class="oquemudou" href="#mudou">o que mudou ↓</a>
 <button id="play">▶ abrir/fechar</button>
 <label><input id="split" type="checkbox"> separar as 3 folhas</label>
 <label><input id="lift" type="checkbox" checked> levantar os presentes</label>
 <span class="muted">arraste para girar · role para zoom</span></header>
 <main><div id="view"></div>
 <aside>
+<details id="mudou" open><summary>O que mudou · para conferir</summary>
+<p class="muted">Versão de 23/11/2026 (commit 3913878). Nada foi impresso ainda: isto é o modelo, não o protótipo.</p>
+<ol>
+<li><b>Torre na própria folha</b>, como na faca corrigida. O contorno de cima e o pé são corte. As duas laterais de fora, nos 39 mm de baixo, são vinco para dentro. A lombada, dentro da torre, é vinco para fora. Não tem mais peça separada nem aba de cola.</li>
+<li><b>Três folhas</b>: o miolo (cortes e ilustração), a folha do meio vermelha e a capa. O vermelho aparece na abertura da torre e debaixo dos presentes.</li>
+<li><b>Presentes</b>: aba cortada em cima, à direita e embaixo, com vinco à esquerda. Levantada, mostra na folha do meio: “POIS TOME SOLUÇÃO: pin, ioiô e canga da Foról. forol.com.br”.</li>
+<li><b>Título</b>: “FELIZ NATAL, MEU FI!”. O selo agora lê “IEEEI! VALHA!” em cima e “AVIA! AI DENTO!” embaixo.</li>
+</ol>
+<h3>Diferente do desenho da faca</h3>
+<ul>
+<li>Um asterisco no topo, em cima da lombada, no lugar das duas estrelas com a fenda no meio.</li>
+<li>As dobradiças da torre têm 29 % da altura (o pilar de fora), não uns 40 %.</li>
+<li>A dobradiça dos presentes corre a lateral inteira, na borda da tampa.</li>
+<li>Não há texto na abertura da torre: a torre em pé esconde a própria janela.</li>
+</ul>
+<h3>Como testar aqui</h3>
+<ul>
+<li>Arraste <b>abertura</b> de 180° até 4°. A torre deita na folha a 180°, fica em pé a 90° e fecha dentro do cartão.</li>
+<li>Marque <b>separar as 3 folhas</b> para ver as camadas.</li>
+<li>Desmarque <b>levantar os presentes</b> para ver a aba deitada.</li>
+<li>Arraste o modelo para girar; a capa está do outro lado.</li>
+</ul>
+<h3>Para confirmar</h3>
+<ul>
+<li>Os vincos e cortes da torre estão onde você desenhou?</li>
+<li>Os presentes são mesmo uma aba que se levanta à mão? Nada a aciona.</li>
+<li>O texto debaixo dos presentes é o que você queria como “informações dos presentes”?</li>
+<li>Sua matrícula, para o cabeçalho do PDF.</li>
+</ul>
+<h3>Arquivos</h3>
+<p><a href="cartao-forol.pdf">PDF da planificação (7 páginas)</a></p>
+<div class="facas"><figure><a href="faca-miolo.jpg"><img src="faca-miolo.jpg" alt="Faca do miolo: cortes e vincos" loading="lazy"></a><figcaption>Faca do miolo: cortes e vincos (página 1 do PDF)</figcaption></figure><figure><a href="folha-do-meio.jpg"><img src="folha-do-meio.jpg" alt="Folha do meio: vermelho e texto dos presentes" loading="lazy"></a><figcaption>Folha do meio: vermelho e texto dos presentes (página 3 do PDF)</figcaption></figure><figure><a href="cola-folha-do-meio.jpg"><img src="cola-folha-do-meio.jpg" alt="Onde vai a cola (sem cola atrás da torre e dos presentes)" loading="lazy"></a><figcaption>Onde vai a cola (sem cola atrás da torre e dos presentes) (página 4 do PDF)</figcaption></figure></div>
+</details>
+
 <div id="warn"></div>
 <h2>Planificação do miolo</h2>
 <canvas id="flat"></canvas>
